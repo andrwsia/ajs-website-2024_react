@@ -1,0 +1,82 @@
+:root {
+    --gap-1: 2rem;
+    --gap-2: 4rem;
+    --gap-3: 6rem;
+    --gap-4: 8rem;
+
+    --min-column-width: 1rem;
+    --max-column-width: 1536px;
+    --full-width-start_width: var(--min-column-width);
+    --full-width-end_width: var(--min-column-width);
+}
+
+// Tailwind Grid Utilities
+.grid {
+    display: grid;
+}
+
+.grid-area-1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.grid-area-2 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+// SCSS mixin for generating grid template columns with customizable inputs
+@mixin grid-template-columns_auto($min-column-size, $column-count, $gap) {
+    $breakpoint: calc(#{$min-column-size} * #{$column-count} + (#{$gap} * (#{$column-count} - 1)));
+    $column-size: calc((100% / #{$column-count}) - #{$gap});
+    
+    grid-template-columns: repeat(auto-fit, minmax(
+        min(max(#{$column-size}, (100% - #{$breakpoint}) * -999), 100%),
+        1fr
+    ));
+}
+
+// SCSS mixin for grid-area of grid-container child
+@mixin grid-container_grid-area {
+    grid-area: grid;
+}
+
+@mixin grid-container_grid-area-fw {
+    grid-area: full-width;
+}
+
+.grid-container_grid-area {
+    @include grid-container_grid-area;
+}
+
+// SCSS mixin for generating grid template columns
+@mixin grid-container_grid($start, $center, $end) {
+    grid-template-columns: 
+        [full-width-start]
+            minmax(var(--full-width-start_width), $start)
+        [grid-start]
+            $center
+        [grid-end]
+            minmax(var(--full-width-end_width), $end)
+        [full-width-end]
+    ;
+
+    grid-template-rows:
+        [grid-start]
+            $center
+        [grid-end]
+    ;
+}
+
+// Default grid container styles
+.grid-container {
+    display: grid;
+    @include grid-container_grid(0.5fr, 4fr, 0.5fr); // Default column widths
+}
+
+// Media query for larger screens
+@media (min-width: 2560px) {
+    .grid-container {
+        @include grid-container_grid(1fr, var(--max-column-width), 1fr); // Adjusted column widths for larger screens
+    }
+}

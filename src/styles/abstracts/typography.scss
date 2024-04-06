@@ -1,0 +1,274 @@
+@use "colors" as *;
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap") format("woff2");
+  /* Adjust URL and format as necessary */
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap") format("woff2");
+  /* Adjust URL and format as necessary */
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap") format("woff2");
+  /* Adjust URL and format as necessary */
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap") format("woff2");
+  /* Adjust URL and format as necessary */
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  /* Use Manrope font for body */
+}
+
+:root {
+  // Font Size
+  // --fs-h1: 8rem;
+  --fs-h1: 12.2vw;
+  --fs-h2: 5rem;
+  --fs-h3: 3rem;
+  --fs-text-2xl: 3rem;
+  --fs-text-xl: 2.25rem;
+  --fs-text-lg: 1.875rem;
+  --fs-text-md: 1.25rem;
+  --fs-text-sm: 1rem;
+  --fs-text-xsm: 1rem;
+  --fs-text-header-mobile: 2rem;
+
+  // Font Weight
+  --fw-bold: 700;
+  --fw-regular: 500;
+  --fw-medium: 400;
+  --fw-light: 300;
+
+  // Letter Spacing
+  --lp-h1: -0.03rem;
+  --lp-h2: -0.03rem;
+  --lp-h3: -0.01rem;
+  --lp-text-2xl: -0.01rem;
+  --lp-text-xl: -0.01rem;
+  --lp-text-lg: -0.01rem;
+  --lp-text-md: -0.01rem;
+  --lp-text-sm: -0.01rem;
+  --lp-text-xsm: -0.01rem;
+
+  // Line Height
+  --lh-h1: auto;
+  --lh-h2: auto;
+  --lh-h3: auto;
+  --lh-text-2xl: auto; // 1rem
+  --lh-text-xl: auto; // 2.5rem
+  --lh-text-lg: auto; // 2.25rem
+  --lh-text-md: auto; // 1.75rem
+  --lh-text-sm: auto; // 1rem
+  --lh-text-xsm: auto; // 1rem
+}
+
+@media (max-width: 1024px) {
+  :root {
+    // --fs-h1: 7rem;
+    --fs-h2: 5rem;
+    --fs-h3: 2.25rem;
+
+    --lh-h1: 1;
+    --lh-h2: 1;
+    --lh-h3: 2.5rem;
+  }
+}
+
+@media (max-width: 780px) {
+  :root {
+    // --fs-h1: 6rem;
+    --fs-h2: 4rem;
+    --fs-text-2xl: 2.25rem;
+    --fs-text-xl: 1.875rem;
+
+    --lh-text-2xl: 2.5rem;
+    --lh-text-xl: 2.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --fs-text-2xl: 1.875rem;
+    --fs-text-xl: 1.5rem;
+    --fs-text-lg: 1.25rem;
+
+    --lh-text-2xl: 2.25rem;
+    --lh-text-xl: 2rem;
+    --lh-text-lg: 1.75rem;
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    // --fs-h1: 5rem;
+    --fs-h2: 3rem;
+    --fs-h3: 1.875rem;
+    --fs-text-2xl: 1.5rem;
+    --fs-text-xl: 1.25rem;
+
+    --lh-h3: 2.25rem;
+    --lh-text-2xl: 2rem;
+    --lh-text-xl: 1.75rem;
+  }
+}
+
+@media (max-width: 375px) {
+  :root {
+    // --fs-h1: 2.8rem;
+    --fs-h2: 2rem;
+    --fs-text-2xl: 1.25rem;
+    --fs-text-xl: 1.125rem;
+    --fs-text-xsm: 0.875rem;
+
+    --lh-text-2xl: 1.75rem;
+    --lh-text-xl: 1.75rem;
+    --lh-text-xsm: 0.875rem;
+  }
+}
+
+@mixin h1-base {
+  font-size: var(--fs-h1);
+  letter-spacing: var(--lp-h1);
+  line-height: var(--lh-h1);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+@mixin h2-base {
+  font-size: var(--fs-h2);
+  letter-spacing: var(--lp-h2);
+  line-height: var(--lh-h2);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+@mixin h3-base {
+  font-size: var(--fs-h3);
+  letter-spacing: var(--lp-h3);
+  line-height: var(--lh-h3);
+  font-weight: var(--fw-bold);
+}
+
+@mixin text-2xl-base {
+  font-size: var(--fs-text-2xl);
+  letter-spacing: var(--lp-text-2xl);
+  line-height: var(--lh-text-2xl);
+  font-weight: var(--fw-regular);
+}
+
+@mixin text-xl-base {
+  font-size: var(--fs-text-xl);
+  letter-spacing: var(--lp-text-xl);
+  line-height: var(--lh-text-xl);
+  font-weight: var(--fw-regular);
+}
+
+@mixin text-lg-base {
+  font-size: var(--fs-text-lg);
+  letter-spacing: var(--lp-text-lg);
+  line-height: var(--lh-text-lg);
+  font-weight: var(--fw-regular);
+}
+
+@mixin text-md-base {
+  font-size: var(--fs-text-md);
+  letter-spacing: var(--lp-text-md);
+  line-height: var(--lh-text-md);
+  font-weight: var(--fw-regular);
+}
+
+@mixin text-sm-base {
+  font-size: var(--fs-text-sm);
+  letter-spacing: var(--lp-text-sm);
+  line-height: var(--lh-text-sm);
+  font-weight: var(--fw-regular);
+}
+
+@mixin text-xs-base {
+  font-size: var(--fs-text-xsm);
+  letter-spacing: var(--lp-text-xsm);
+  line-height: var(--lh-text-xsm);
+  font-weight: var(--fw-regular);
+}
+
+@mixin text-header-mobile-base {
+  font-size: var(--fs-text-header-mobile);
+  letter-spacing: var(--lp-text-lg);
+  line-height: var(--lh-text-lg);
+  font-weight: var(--fw-bold);
+}
+
+// Typography Dark Styling
+.h1-dark {
+  @include h1-base;
+  color: $black-2;
+}
+
+.h2-dark {
+  @include h2-base;
+  color: $black-2;
+}
+
+.h3-dark {
+  @include h3-base;
+  color: $black-2;
+}
+
+.text-2xl-dark {
+  @include text-2xl-base;
+  color: $black-2;
+}
+
+.text-xl-dark {
+  @include text-xl-base;
+  color: $black-2;
+}
+
+.text-lg-dark {
+  @include text-lg-base;
+  color: $black-2;
+}
+
+.text-md-dark {
+  @include text-md-base;
+  color: $black-2;
+}
+
+.text-sm-dark {
+  @include text-sm-base;
+  color: $black-2;
+}
+
+.text-xs-dark {
+  @include text-xs-base;
+  color: $black-2;
+}
+
+// Typography Light Styling
+.text-md-light {
+  @include text-md-base;
+  color: $gray-2;
+}
+
+.text-header-mobile {
+  @include text-header-mobile-base;
+  color: $gray-2;
+}

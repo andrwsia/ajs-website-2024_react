@@ -1,0 +1,7 @@
+@use "../layout/grid.scss" as *;
+
+.solutions-grid {
+    @include grid-container_grid-area;
+    padding: 2rem 0;
+    height: 100%;
+}

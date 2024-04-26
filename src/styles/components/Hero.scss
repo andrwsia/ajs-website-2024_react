@@ -3,7 +3,7 @@
 @use "../utilities/general" as *;
 
 #hero {
-    @include flow-spacing;
+    // @include flow-spacing;
     height: 100vh;
     position: relative;
     overflow: hidden;

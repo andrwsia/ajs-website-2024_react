@@ -237,6 +237,11 @@ body {
   color: $black-2;
 }
 
+.h3-light {
+  @include h3-base;
+  color: $white-1;
+}
+
 .text-2xl-dark {
   @include text-2xl-base;
   color: $black-2;
@@ -252,7 +257,7 @@ body {
   color: $black-2;
 }
 
-.text-lg-white {
+.text-lg-light {
   @include text-lg-base;
   color: $white-1;
 }

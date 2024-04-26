@@ -7,11 +7,19 @@ const Header = () => {
     const [isNavButtonOpen, setIsNavButtonOpen] = useState(false);
     const [isHeaderScrolled, setIsHeaderScrolled] = useState(false);
 
+    // const toggleNavIcon = () => {
+    //     setIsOpen(!isOpen);
+    // };
+
+    const toggleNavIcon = () => {
+        setIsNavButtonOpen(!isNavButtonOpen);
+    };
+
     const navLinks = [
         { title: "Solutions", href: "#solutions" },
         { title: "Work", href: "#work" },
         { title: "About", href: "#about" },
-        { title: "Contact", href: "#contact" }
+        { title: "Contact", href: "#footer" }
     ];
 
     useEffect(() => {
@@ -75,6 +83,7 @@ const Header = () => {
                 )}
 
                 {isNavButtonOpen && (
+                    <>
                     <nav className={`header-toggled`}>
                         <div className={`header-logo`}>
                             <a className="text-md-light" href="/">AJS</a>
@@ -91,9 +100,12 @@ const Header = () => {
                             </ul>
                         </div>
                     </nav>
+                    <div className={`header-toggled-overlay ${isNavButtonOpen ? 'open' : ''}`} onClick={toggleNavIcon}></div>
+                    </>
                 )}
-                <div className={`header-mobile-btn ${isHeaderScrolled ? 'display-show' : ''} ${isNavButtonOpen  ? 'display-show' : ''}`}>
-                    <NavButton isOpen={isNavButtonOpen} setIsOpen={setIsNavButtonOpen} />
+                <div className={`nav-button ${isHeaderScrolled ? 'display-show' : ''} ${isNavButtonOpen  ? 'display-show' : ''}`}>
+                    {/* <NavButton toggleNavIcon={toggleNavIcon} isOpen={isNavButtonOpen} setIsOpen={setIsNavButtonOpen} /> */}
+                    <NavButton toggleNavIcon={toggleNavIcon} isOpen={isNavButtonOpen} />
                 </div>
             </header>
         </>

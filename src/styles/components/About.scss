@@ -1,0 +1,21 @@
+@use "../utilities/general" as *;
+@use "../abstracts/colors" as *;
+
+#about {
+    @include flow-spacing;
+    background: $black-2;
+    padding: 4rem 0;
+}
+
+.about-grid {
+    .about-title {
+        padding-bottom: 3rem;
+    }
+
+    .about-content {
+        border-radius: 2rem;
+        background: rgba($black-3, .25);
+        backdrop-filter: blur(2rem);
+        padding: 1rem;
+    }
+}

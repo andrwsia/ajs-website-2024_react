@@ -5,7 +5,7 @@
     --gap-4: 8rem;
 
     --min-column-width: 1rem;
-    --max-column-width: 1536px;
+    --max-column-width: 1232px;
     --full-width-start_width: var(--min-column-width);
     --full-width-end_width: var(--min-column-width);
 }
@@ -75,8 +75,8 @@
 }
 
 // Media query for larger screens
-@media (min-width: 2560px) {
-    .grid-container {
-        @include grid-container_grid(1fr, var(--max-column-width), 1fr); // Adjusted column widths for larger screens
-    }
-}
+// @media (min-width: 2560px) {
+//     .grid-container {
+//         @include grid-container_grid(1fr, var(--max-column-width), 1fr);
+//     }
+// }

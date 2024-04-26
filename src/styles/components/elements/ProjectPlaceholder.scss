@@ -1,0 +1,13 @@
+.project-placeholder {
+    background-color: white;
+    width: 100%; /* Set width as a percentage of the container width */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        text-transform: uppercase;
+        font-weight: var(--fw-bold);
+    }
+}

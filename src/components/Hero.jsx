@@ -9,10 +9,11 @@ const Hero = () => {
                             <h3 className="h3-dark">Web Developer</h3>
                             <p className="text-lg-dark">A creative and innovative web developer who turns ideas into reality, spanning from design to development.</p>
                         </div>
-                        <p className="text-md-dark">See Work</p>
-                        <p className="text-md-dark">Contact Me!</p>
+                        <a href="#work" className="button-1">See Work</a>
+                        <a href="#footer" className="button-1">Contact Me!</a>
                     </div>
                 </div>
+                <div className="blob"></div>
             </section>
         </>
     )

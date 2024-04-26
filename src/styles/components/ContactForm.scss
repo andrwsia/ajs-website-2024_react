@@ -1,0 +1,40 @@
+@use "../abstracts/colors" as *;
+
+.contact-form {
+    // border: 1px solid red;
+    display: grid;
+    gap: 2rem;
+    max-width: 700px !important;
+    label {
+        display: block;
+        padding-bottom: 1rem;
+    }
+    input {
+        outline-color: $blue-1;
+        padding: 1rem;
+        display: block;
+        height: 50px;
+        width: 100%;
+        border: 2px solid $gray-1;
+        border-radius: .5rem;
+    }
+    textarea {
+        resize: vertical;
+        outline-color: $blue-1;
+        padding: 1rem;
+        display: block;
+        height: 100px;
+        width: 100%;
+        border: 2px solid $gray-1;
+        border-radius: .5rem;
+    }
+    button {
+        width: fit-content;
+    }
+}
+
+@media (max-width: 375px) {
+    #footer .text-xl-dark {
+        font-size: var(--fs-text-2xl);
+    }
+}

@@ -1,7 +1,61 @@
 @use "../layout/grid.scss" as *;
+@use "../utilities/general" as *;
+
+#solutions {
+    @include flow-spacing;
+}
 
 .solutions-grid {
     @include grid-container_grid-area;
     padding: 2rem 0;
     height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    .solutions-title {
+        padding-bottom: 3rem;
+    }
+
+    .solutions-content {
+        display: grid;
+        gap: 4rem;
+
+        .solution {
+            display: grid;
+            gap: 2rem;
+            @include grid-template-columns_auto(350px, 2, 2rem);
+
+            h3 {
+                grid-row: 1/2;
+                grid-column: 1/-1;
+            }
+
+            p {
+                max-width: 750px;
+                grid-row: 2/3;
+                grid-column: 1/-1;
+            }
+
+            .solution-list {}
+
+            .solution-techstack {
+                ul {
+                    display: grid;
+                    @include grid-template-columns_auto(25px, 3, 2rem);
+                    gap: 2rem;
+                    justify-content: center;
+                    align-items: center;
+
+                    li {
+                        display: flex;
+                        justify-content: center;
+
+                        img {
+                            width: 75px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

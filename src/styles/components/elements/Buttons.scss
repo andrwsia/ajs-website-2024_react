@@ -1,0 +1,81 @@
+@use "../../abstracts/colors" as *;
+@use "../../abstracts/typography" as *;
+
+:root {
+    --button-width: 250px;
+    --button-height: 75px;
+    --border-black: 1px solid black;
+    --border-transparent: 1px solid transparent;
+}
+
+@mixin button-base {
+    // font-size: var(--fs-300);
+    // font-weight: var(--fw-700);
+    // text-transform: uppercase;
+    // letter-spacing: var(--lp-300);
+    transition: .5s ease-out;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem 1rem;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.button-1 {
+    @include button-base;
+    @include text-sm-base;
+    color: $black-2;
+    background: transparent;
+    border: var(--border-black) !important;
+}
+
+.button-1:hover {
+    color: $white-1;
+    background: $black-2;
+    border: var(--border-transparent) !important;
+}
+
+.button-2 {
+    @include button-base;
+    @include text-md-base;
+    padding: .5rem 0 !important;
+    border-radius: 1.25rem !important;
+    width: 115px;
+    background: transparent;
+    color: $white-1;
+    border: 2.5px solid $white-1;
+}
+
+.button-2:hover {
+    background: $white-1;
+    color: $black-2;
+    border: 2.5px solid transparent;
+}
+
+.button-2-alt {
+    @include button-base;
+    background: var(--black-1);
+    color: var(--white-1);
+    border: var(--border-transparent);
+}
+
+.button-2-alt:hover {
+    background: var(--grey-3);
+    color: var(--white-1);
+}
+
+.button-3 {
+    @include button-base;
+    @include text-lg-base;
+    background-color: $black-2;
+    color: $white-1;
+    border: var(--border-transparent);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+}
+
+.button-3:hover {
+    background: $blue-1;
+}

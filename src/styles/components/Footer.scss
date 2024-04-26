@@ -1,0 +1,71 @@
+@use "../layout/grid" as *;
+@use "../abstracts/colors" as *;
+@use "../utilities//general" as *;
+
+#footer {
+    padding: 2rem 0;
+}
+
+.footer-grid {
+    .footer-title {
+        padding-bottom: 3rem;
+    }
+
+    .footer-nav {
+        display: grid;
+        gap: 4rem;
+        @include grid-template-columns_auto(275px, 2, 4rem);
+
+        .socials {
+            display: grid;
+            gap: 2rem;
+            align-items: flex-start;
+            justify-content: end;
+            height: fit-content;
+            
+
+            h3 {
+                grid-column: 1/-1;
+                grid-row: 1/2;
+            }
+            
+            a {
+                display: flex;
+                align-items: end;
+                text-align: center;
+                width: fit-content;
+            }
+        }
+    }
+
+    .copyright {
+        border-top: 2px solid $black-2;
+        margin-top: 2rem;
+        padding-top: 2rem;
+
+        p {
+            text-align: center;
+        }
+    }
+
+}
+
+@media (max-width: 767px) {
+    #footer .footer-grid .footer-nav .socials {
+        gap: 0;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    #footer .footer-grid .footer-nav .socials h3 {
+        padding-bottom: 1rem;
+    }
+}
+
+@media (max-width: 425px) {
+    #footer .footer-grid .footer-nav .socials {
+        gap: 0;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
